@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --color-gold-50: #fefdf0;
+  --color-gold-100: #fef7c3;
+  --color-gold-200: #fdf08c;
+  --color-gold-350: #d4af37; /* Metallic Classic Gold */
+  --color-gold-400: #c5a059;
+  --color-gold-500: #b8860b;
+  --color-gold-600: #996515;
+  --color-gold-700: #7d4f10;
+  --color-gold-900: #4a2e05;
+}
+
+/* Custom scrollbar to keep a luxury minimal look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdfdfd;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e2e2e5;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c5a059;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: #111111;
+}
+
+/* Luxury animations and styles */
+.text-luxury {
+  font-family: var(--font-serif);
+}
+
+.gold-dim-glow {
+  text-shadow: 0 0 12px rgba(197, 160, 89, 0.2);
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #dfbf7c 0%, #b8860b 50%, #855c06 100%);
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(to right, #dfbf7c, #b8860b) 1;
+}
+
+/* Custom Image ZOOM Effect */
+.image-zoom-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.image-zoom-lens {
+  position: absolute;
+  border: 1px solid #c5a059;
+  border-radius: 50%;
+  pointer-events: none;
+  width: 120px;
+  height: 120px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  display: none;
+  background-repeat: no-repeat;
+  z-index: 100;
+}

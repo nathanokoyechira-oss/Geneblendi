@@ -1,0 +1,6 @@
+{
+  "name": "Gene Bendi",
+  "description": "Premium footwear and fashion brand, crafted for style, comfort, and luxury excellence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
