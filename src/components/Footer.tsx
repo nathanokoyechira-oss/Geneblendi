@@ -50,7 +50,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 Authentic Guarantee
               </h4>
               <p className="text-xs text-gray-500 mt-1">
-                Each product series certified by laser-etched serial numbers.
+                Individually certified with bespoke designer-signed serial labels.
               </p>
             </div>
           </div>
@@ -64,7 +64,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 Premium Materials
               </h4>
               <p className="text-xs text-gray-500 mt-1">
-                Grade-A premium Nigerian leather and responsive flight chassis.
+                Grade-A solid hardwoods, premium linen overlays, and organic handwoven metals.
               </p>
             </div>
           </div>
@@ -77,11 +77,11 @@ export default function Footer({ onNavigate }: FooterProps) {
         
         {/* Brand Block */}
         <div className="space-y-6">
-          <h3 className="text-luxury font-serif text-2xl text-black tracking-[0.25em]">
-            GENE BENDI
+          <h3 className="font-serif text-2xl text-black tracking-wide text-luxury leading-tight">
+            Helyn hills <span className="text-xs tracking-normal font-sans font-normal text-gray-500 lowercase block">interiors</span>
           </h3>
           <p className="text-xs text-gray-500 leading-relaxed max-w-sm font-light">
-            Gene Bendi represents the apex of avant-garde footwear. Synthesizing raw street elements with premium, ancient Nigerian craftsmanship, we curate limited physical shoe runs for curators who demand perfection.
+            Helyn Hills interiors curates the apex of high-end, artisanally crafted designer furniture, statement decor solutions, and boutique internal structures. We leverage timeless organic carving sensibilities with mid-century minimalist profiles.
           </p>
           <div className="flex space-x-4 pt-2">
             {['Instagram', 'Pinterest', 'Vimeo', 'X'].map((social) => (
@@ -100,14 +100,15 @@ export default function Footer({ onNavigate }: FooterProps) {
         {/* Collection Sitemap */}
         <div>
           <h4 className="text-xs font-bold font-mono tracking-[0.2em] text-black uppercase mb-6">
-            COLLECTIONS
+            PRODUCT LINES
           </h4>
           <ul className="space-y-3 text-xs text-gray-650">
-            {['Luxury Footwear', 'Men\'s Sneakers', 'Women\'s Sneakers', 'Running Shoes', 'New Arrivals'].map((cat) => (
+            {['Luxury Furniture', 'Bespoke Decors', 'Artisanal Interiors', 'Handcrafted Collections', 'New Releases'].map((cat) => (
               <li key={cat}>
                 <button
+                  type="button"
                   onClick={() => onNavigate('shop')}
-                  className="hover:text-[#D4AF37] transition-colors cursor-pointer"
+                  className="hover:text-[#D4AF37] transition-colors cursor-pointer text-left"
                 >
                   {cat}
                 </button>
@@ -123,23 +124,23 @@ export default function Footer({ onNavigate }: FooterProps) {
           </h4>
           <ul className="space-y-3 text-xs text-gray-650">
             <li>
-              <button onClick={() => onNavigate('about')} className="hover:text-[#D4AF37] transition-colors cursor-pointer">
-                Maison Legacy & Craft
+              <button onClick={() => onNavigate('about')} className="hover:text-[#D4AF37] transition-colors cursor-pointer text-left">
+                Maison Legacy & Timber
               </button>
             </li>
             <li>
-              <button onClick={() => onNavigate('contact')} className="hover:text-[#D4AF37] transition-colors cursor-pointer">
-                Boutique Locations
+              <button onClick={() => onNavigate('contact')} className="hover:text-[#D4AF37] transition-colors cursor-pointer text-left">
+                Boutique Showrooms
               </button>
             </li>
             <li>
-              <button onClick={() => onNavigate('faq')} className="hover:text-[#D4AF37] transition-colors cursor-pointer">
-                FAQ & Custom Orders
+              <button onClick={() => onNavigate('faq')} className="hover:text-[#D4AF37] transition-colors cursor-pointer text-left">
+                FAQ & Custom Commissions
               </button>
             </li>
             <li>
-              <button onClick={() => onNavigate('contact')} className="hover:text-[#D4AF37] transition-colors cursor-pointer">
-                Concierge Contact
+              <button onClick={() => onNavigate('contact')} className="hover:text-[#D4AF37] transition-colors cursor-pointer text-left">
+                Design Consultation
               </button>
             </li>
           </ul>
@@ -164,7 +165,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             </li>
             <li className="flex items-center space-x-2.5">
               <Mail className="w-4 h-4 text-[#D4AF37] shrink-0" />
-              <span className="break-all select-all">concierge@genebendi.luxury</span>
+              <span className="break-all select-all">concierge@helynhills.design</span>
             </li>
           </ul>
         </div>
@@ -175,7 +176,7 @@ export default function Footer({ onNavigate }: FooterProps) {
       <div className="bg-gray-50 py-8 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-gray-400 font-mono tracking-widest">
           <div>
-            &copy; {new Date().getFullYear()} GENE BENDI CO. ALL RIGHTS RESERVED.
+            &copy; {new Date().getFullYear()} HELYN HILLS INTERIORS. ALL RIGHTS RESERVED.
           </div>
           <div className="flex space-x-6 text-[10px] uppercase">
             <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-black transition-colors font-semibold">Privacy Charter</a>

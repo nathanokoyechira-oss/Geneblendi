@@ -82,13 +82,13 @@ export default function Header({
         <div
           id="brand-logo"
           onClick={() => onNavigate('home')}
-          className="cursor-pointer tracking-[0.25em] text-center"
+          className="cursor-pointer text-left leading-none shrink-0"
         >
-          <span className="text-luxury font-serif text-2xl font-light text-black uppercase block leading-none">
-            GENE BENDI
+          <span className="text-luxury font-serif text-lg font-light text-black tracking-wide block">
+            Helyn hills
           </span>
-          <span className="text-[7.5px] uppercase font-mono tracking-[0.55em] text-zinc-400 block mt-1 hover:text-[#D4AF37] transition-colors">
-            LAGOS &bull; TOKYO
+          <span className="text-[10px] lowercase font-sans tracking-[0.05em] text-[#D4AF37] block mt-0.5">
+            interiors
           </span>
         </div>
 
@@ -96,8 +96,8 @@ export default function Header({
         <nav id="desktop-navbar" className="hidden md:flex items-center space-x-8">
           {[
             { id: 'home', label: 'HOME' },
-            { id: 'shop', label: 'SHOP' },
-            { id: 'about', label: 'THE MAISON' },
+            { id: 'shop', label: 'HELYN' },
+            { id: 'about', label: 'THE STUDIO' },
             { id: 'contact', label: 'CONTACT' },
             { id: 'faq', label: 'FAQ' },
             { id: 'owner-portal', label: 'OWNER PORTAL' },
@@ -105,7 +105,7 @@ export default function Header({
             <button
               key={item.id}
               onClick={() => onNavigate(item.id)}
-              className={`text-xs tracking-[0.2em] uppercase font-medium relative py-1 transition-all duration-300 hover:text-[#D4AF37] ${
+              className={`text-[11px] tracking-[0.2em] uppercase font-medium relative py-1 transition-all duration-300 hover:text-[#D4AF37] ${
                 activeRoute === item.id 
                   ? 'text-[#D4AF37] font-semibold' 
                   : item.id === 'owner-portal' 
@@ -154,7 +154,7 @@ export default function Header({
                     type="text"
                     value={searchVal}
                     onChange={(e) => setSearchVal(e.target.value)}
-                    placeholder="Search Gene Bendi archives..."
+                    placeholder="Search our design archives..."
                     className="w-full bg-transparent border-none text-sm text-black placeholder-gray-400 focus:outline-none"
                   />
                   <button onClick={() => setIsSearchOpen(false)}>
@@ -279,21 +279,21 @@ export default function Header({
         {isMobileMenuOpen && (
           <motion.div
             id="mobile-menu-dropdown"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.35, ease: 'easeInOut' }}
-            className="absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-xl overflow-hidden z-40"
+            initial={{ height: 0, opacity: 0, scaleY: 0.95 }}
+            animate={{ height: 'auto', opacity: 1, scaleY: 1 }}
+            exit={{ height: 0, opacity: 0, scaleY: 0.95 }}
+            transition={{ type: "spring", stiffness: 180, damping: 22 }}
+            className="absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-xl overflow-hidden z-40 origin-top"
           >
-            <div className="px-6 py-8 flex flex-col space-y-6 text-black">
+            <div className="px-6 py-8 flex flex-col space-y-6 text-black bg-white">
               <nav className="flex flex-col space-y-4">
                 {[
                   { id: 'home', label: 'Home Page' },
-                  { id: 'shop', label: 'E-Store Collection' },
-                  { id: 'about', label: 'The Gene Bendi Maison' },
-                  { id: 'contact', label: 'Concierge Support' },
-                  { id: 'faq', label: 'FAQ & Shipping' },
-                  { id: 'owner-portal', label: 'Atelier Owner Portal' },
+                  { id: 'shop', label: 'Helyn' },
+                  { id: 'about', label: 'The Interior Studio' },
+                  { id: 'contact', label: 'Concierge Solutions' },
+                  { id: 'faq', label: 'FAQ & Commissions' },
+                  { id: 'owner-portal', label: 'Atelier Portal' },
                 ].map((link) => (
                   <button
                     key={link.id}
@@ -311,7 +311,7 @@ export default function Header({
                 ))}
               </nav>
 
-              <div className="pt-4 border-t border-gray-150 text-center space-y-3">
+              <div className="pt-4 border-t border-gray-150 text-center space-y-3 bg-white">
                 {isLoggedIn ? (
                   <p className="text-xs text-gray-550">
                     Logged in as <span className="text-[#D4AF37] font-mono">{userEmail}</span>

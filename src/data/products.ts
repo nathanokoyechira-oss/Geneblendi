@@ -11,13 +11,13 @@ export interface Product {
   id: string;
   name: string;
   tagline: string;
-  category: 'Men\'s Sneakers' | 'Women\'s Sneakers' | 'Running Shoes' | 'Casual Shoes' | 'Luxury Footwear';
+  category: 'Furniture' | 'Decors' | 'Interiors';
   price: number;
   originalPrice?: number;
   rating: number;
   images: string[];
   colors: { name: string; class: string; value: string }[];
-  sizes: number[];
+  sizes: string[];
   stock: number;
   description: string;
   details: string[];
@@ -30,421 +30,275 @@ export interface Product {
 
 export const PRODUCTS: Product[] = [
   {
-    id: 'gb-01',
-    name: 'Blendi Onyx Runner',
-    tagline: 'Precision engineered for high-performance comfort.',
-    category: 'Running Shoes',
-    price: 245,
-    originalPrice: 295,
+    id: 'eh-01',
+    name: 'Sovereign Bouclé Lounge Chair',
+    tagline: 'Sculptural silhouette designed for sensory-rich relaxation.',
+    category: 'Furniture',
+    price: 920,
+    originalPrice: 1100,
     rating: 4.9,
     images: [
-      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=800&q=80'
+      'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80'
     ],
     colors: [
-      { name: 'Onyx Red', class: 'bg-red-600', value: '#DC2626' },
-      { name: 'Pure Obsidian', class: 'bg-zinc-900', value: '#18181B' },
-      { name: 'Chrono White', class: 'bg-stone-100 border border-zinc-200', value: '#F5F5F4' }
+      { name: 'Oatmeal Bouclé', class: 'bg-[#F5F2EB]', value: '#F5F2EB' },
+      { name: 'Sable Charcoal', class: 'bg-[#2B2B2A]', value: '#2B2B2A' },
+      { name: 'Sage Velvet', class: 'bg-[#5C6656]', value: '#5C6656' }
     ],
-    sizes: [7, 8, 9, 10, 11, 12],
-    stock: 8,
-    description: 'A masterpiece of precision, the Blendi Onyx Runner merges cutting-edge responsive sole architecture with breathable lightweight luxury PrimeKnit mesh. Designed to propel you forward while maintaining an elegant aesthetic presence.',
-    details: [
-      'Responsive cellular cushioning system',
-      'Aerograd mesh upper with seamless reinforcement overlays',
-      'Slip-resistant vulcanized rubber outsole styled with gold traction matrices',
-      'Weight: 260g (Reference size US 9)'
-    ],
-    features: [
-      'Proprietary Blendi-Bounce shock absorbing heel',
-      'Sleek structural form with light-reflective piping',
-      'Signature metallic-finish gold logo accent'
-    ],
-    reviews: [
-      { id: 'r1', author: 'Alexander M.', rating: 5, date: '2026-04-12', comment: 'The spring in these is phenomenal. Felt like walking on high-performance clouds from the first mile.', verified: true },
-      { id: 'r2', author: 'Sarah K.', rating: 4.8, date: '2026-05-01', comment: 'Spectacular styling. I wear them to workouts and high-end casual brunches alike.', verified: true }
-    ],
-    featured: true,
-    bestSeller: true
-  },
-  {
-    id: 'gb-02',
-    name: 'Aurelia Minimalist Court',
-    tagline: 'Timeless hand-crafted premium leather silhouette.',
-    category: 'Luxury Footwear',
-    price: 380,
-    rating: 4.8,
-    images: [
-      'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=800&q=80'
-    ],
-    colors: [
-      { name: 'Alabaster Ivory', class: 'bg-amber-50 border border-amber-200/50', value: '#FFFBEB' },
-      { name: 'Sahara Sand', class: 'bg-amber-100', value: '#FEF3C7' },
-      { name: 'Midnight Charcoal', class: 'bg-zinc-850', value: '#27272A' }
-    ],
-    sizes: [6, 7, 8, 9, 10],
-    stock: 14,
-    description: 'Constructed from butter-soft top-grain calfskin leather, the Aurelia Minimalist Court is tailored with precise artisan stitching. The perfect everyday luxury statement that elevates tailored suits and relaxed denim effortlessly.',
-    details: [
-      'Handcrafted in Lagos from full-grain nap leather',
-      'Ultra-soft natural calfskin interior lining for barefoot comfort',
-      'Waxed cotton premium flat laces',
-      'Margom-style durable premium rubber cupsole'
-    ],
-    features: [
-      'Ergonomic cork-cushioned footbed that molds to your unique arch',
-      'Subtle metallic serial number stamped discreetly on the heel outer',
-      'Included luxury protective linen storage travel bag'
-    ],
-    reviews: [
-      { id: 'r3', author: 'Domenico S.', rating: 5, date: '2026-05-20', comment: 'Absolute perfection. The leather quality rivals houses charging twice the price.', verified: true },
-      { id: 'r4', author: 'Claire F.', rating: 4, date: '2026-06-02', comment: 'Slightly narrow at first, but after three days of wear, they formed beautifully to my feet.', verified: true }
-    ],
-    featured: true,
-    newArrival: true
-  },
-  {
-    id: 'gb-03',
-    name: 'Vanguard Cyber-Knit',
-    tagline: 'Futuristic technical mesh with dynamic architectural soles.',
-    category: 'Men\'s Sneakers',
-    price: 210,
-    rating: 4.7,
-    images: [
-      'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80'
-    ],
-    colors: [
-      { name: 'Cyber Neon Green', class: 'bg-lime-500', value: '#84CC16' },
-      { name: 'Sleek Onyx', class: 'bg-zinc-900', value: '#18181B' }
-    ],
-    sizes: [8, 9, 10, 11, 12],
+    sizes: ['Standard Lounge', 'Grand Salon', 'Atelier Custom'],
     stock: 5,
-    description: 'Push boundaries. The Vanguard Cyber-Knit blends high-visibility hyper-molded neon structures with extreme rebound soles. It commands attention while providing incredible architectural foot support.',
+    description: 'Our signature lounge masterpiece. Wrapped in deep textured Italian bouclé, the Sovereign lines emphasize fluid architectural shapes that cradle your skeletal contour perfectly while providing an elite aesthetic weight for minimal, warm living spaces.',
     details: [
-      'Molded structural high-rebound TPU cages',
-      'Cyber-weave moisture-wicking synthetic matrix upper',
-      'Low-profile integrated orthotic footbed insert'
+      'Engineered solid beechwood interior frame structure',
+      'Luxe, high-resilience memory fill layered with premium goose down',
+      'Authentic certified organic merino wool bouclé textile',
+      'Integrated hidden steel pivot glide leveling inserts'
     ],
     features: [
-      'Unique neon shock absorbers built directly into geometric sole',
-      '30% ultra-recycled performance compound construction',
-      'Dual pull tabs for quick aerodynamic slip-on access'
+      'Designed exclusively as a statement lounge focal point',
+      'Hand-tensioned stitching with lifetime seam assurance',
+      'Delivered in white-glove wood crates with bespoke care kits'
     ],
     reviews: [
-      { id: 'r5', author: 'Marcus V.', rating: 5, date: '2026-05-25', comment: 'The design is unreal! I constantly get stopped and asked what brand these are.', verified: true }
-    ],
-    newArrival: true
-  },
-  {
-    id: 'gb-04',
-    name: 'Blendi Pastel Prism',
-    tagline: 'Vibrant artistic tones for individualist expression.',
-    category: 'Women\'s Sneakers',
-    price: 195,
-    rating: 4.9,
-    images: [
-      'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1512374382149-233c42b6a83b?auto=format&fit=crop&w=800&q=80'
-    ],
-    colors: [
-      { name: 'Multi-Color Prism', class: 'bg-gradient-to-r from-pink-300 via-indigo-300 to-yellow-200', value: 'prism' },
-      { name: 'Soft Orchid', class: 'bg-pink-100', value: '#FCE7F3' }
-    ],
-    sizes: [5, 6, 7, 8, 9],
-    stock: 11,
-    description: 'Make a statement of joy. Blendi Pastel Prism features a delightful intersection of lavender, soft apricot, and retro teal accents wrapped in premium distressed suede panels.',
-    details: [
-      'Genuine double-nap velvet suede panels',
-      'High-impact absorbing micro-cellular rubber midsoles',
-      'Reinforced comfort eyelets with gold trim lace tips'
-    ],
-    features: [
-      'Beautiful multi-tonal aesthetic paneling',
-      'Featherweight luxury build under 210g',
-      'Signature pastel dust-cover presentation box included'
-    ],
-    reviews: [
-      { id: 'r6', author: 'Chloe T.', rating: 5, date: '2026-06-01', comment: 'Absolutely in love with the pastel colorways! They match almost anything in my summer wardrobe.', verified: true },
-      { id: 'r7', author: 'Evelyn P.', rating: 4.8, date: '2026-06-10', comment: 'Extremely soft material. Zero breaking-in period required.', verified: true }
-    ],
-    bestSeller: true
-  },
-  {
-    id: 'gb-05',
-    name: 'Chelsea Sovereign Boot',
-    tagline: 'Premium leather Chelsea elegance with heavy grip soles.',
-    category: 'Luxury Footwear',
-    price: 420,
-    rating: 4.9,
-    images: [
-      'https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80'
-    ],
-    colors: [
-      { name: 'Raven Black Leather', class: 'bg-neutral-900', value: '#171717' },
-      { name: 'Heritage Suede Brown', class: 'bg-amber-900', value: '#78350F' }
-    ],
-    sizes: [8, 9, 10, 11, 12, 13],
-    stock: 4,
-    description: 'Crafted for modern royalty. This luxurious Chelsea boot blends fine polished calf leather with flexible, double-stitched deep-tread soles so you remain tall, poised, and grounded.',
-    details: [
-      'Custom deep pull loops with gold weave detailing',
-      'High elastomeric dual gusset side entries',
-      'Storm-welted seal for maximum moisture protection'
-    ],
-    features: [
-      'Hand-burnished leather finish with a subtle sheen',
-      'Sturdy steel shank for supreme Arch support',
-      'Can be resoled multiple times for a lifetime of luxury'
-    ],
-    reviews: [
-      { id: 'r8', author: 'Edward H.', rating: 5, date: '2026-05-02', comment: 'These boot structures are incredible. The absolute pinnacle of Chelsea elegance.', verified: true }
+      { id: 'r1', author: 'Alexander M.', rating: 5, date: '2026-04-12', comment: 'The scale and presence of this chair is phenomenal. It truly anchors our living space.', verified: true },
+      { id: 'r2', author: 'Sarah K.', rating: 4.9, date: '2026-05-01', comment: 'Extremely cozy and sculpturally flawless. Guests always notice it immediately.', verified: true }
     ],
     featured: true,
     bestSeller: true
   },
   {
-    id: 'gb-06',
-    name: 'Apex Air Marathoner',
-    tagline: 'Ultralight feather knit optimized for endurance speed.',
-    category: 'Running Shoes',
-    price: 275,
+    id: 'eh-02',
+    name: 'Monolithic Travertine Coffee Table',
+    tagline: 'Brutalist carved natural stone celebrating organic texture.',
+    category: 'Furniture',
+    price: 1450,
     rating: 4.8,
     images: [
-      'https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80'
+      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1577140917170-285929fb55b7?auto=format&fit=crop&w=800&q=80'
     ],
     colors: [
-      { name: 'Alabaster / Carbon', class: 'bg-slate-400', value: '#94A3B8' },
-      { name: 'Velocity Cyan', class: 'bg-cyan-500', value: '#06B6D4' }
+      { name: 'Tuscan Travertine', class: 'bg-[#EAE1D2]', value: '#EAE1D2' },
+      { name: 'Bespoke Nero Marquina', class: 'bg-[#1C1C1E]', value: '#1C1C1E' }
     ],
-    sizes: [7, 8, 9, 10, 11, 12],
-    stock: 15,
-    description: 'The Apex Air Marathoner represents the apex of sporting high-tech. Integrating carbon fiber flight plate tech coupled with lightweight memory reactive foam, it offers supreme stride energy feedback.',
+    sizes: ['Classic Studio', 'Grande Residence'],
+    stock: 3,
+    description: 'Formed over millennia, this coffee table is carved entirely from solid Italian travertine stone. The surface is deliberately left partially unhoned to accent the natural pockets, fissures, and unique geologic narratives of the stone.',
     details: [
-      '3D-curved carbon fiber propulsion plate',
-      'Form-conforming airy knit structure',
-      'Super-sticky high fatigue threshold treading'
+      '100% genuine honed solid travertine blocks',
+      'Invisible reinforcement structural steel tie pins',
+      'Acid-etched and pre-treated with organic food-safe protective wax seal',
+      'Extremely sturdy weight of 85 kg'
     ],
     features: [
-      'Dynamic power transition heel profile',
-      'Extremely light 190g racing density',
-      'Breathability vents for all-weather racing comfort'
+      'Raw fluted edge profile carved by master stone sculptors',
+      'Zero engineered chemical composites or resins used',
+      'Includes premium heavy felt protection floor slip sheets'
     ],
     reviews: [
-      { id: 'r9', author: 'Nils O.', rating: 5, date: '2026-05-18', comment: 'My race times decreased by 15 seconds a mile. Highly recommended.', verified: true }
-    ]
+      { id: 'r3', author: 'Dominique S.', rating: 5, date: '2026-05-20', comment: 'The travertine block is incredibly rich. Every piece has completely unique pockets. Stunning.', verified: true }
+    ],
+    featured: true,
+    newArrival: true
   },
   {
-    id: 'gb-07',
-    name: 'Blendi Luxe Suede Loafer',
-    tagline: 'Refined comfort for effortless elegant smart casual living.',
-    category: 'Casual Shoes',
-    price: 310,
+    id: 'eh-03',
+    name: 'Fluted Alabaster Arch Sconce',
+    tagline: 'Direct, atmospheric glow diffused through hand-carved stone.',
+    category: 'Interiors',
+    price: 320,
     rating: 4.7,
     images: [
-      'https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=800&q=80'
+      'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=800&q=80'
     ],
     colors: [
-      { name: 'Cognac Gold Brown', class: 'bg-amber-800', value: '#92400E' },
-      { name: 'Classic Charcoal Blue', class: 'bg-slate-800', value: '#1E293B' }
+      { name: 'Translucent White', class: 'bg-[#F9F6F0]', value: '#F9F6F0' },
+      { name: 'Honey Honeycomb', class: 'bg-[#F2DCA5]', value: '#F2DCA5' }
     ],
-    sizes: [8, 9, 10, 11, 12],
-    stock: 6,
-    description: 'Exquisite comfort without laces. Handcrafted with beautiful double-stitched premium calf suede, this luxury loafer brings refined charm to summer outings, beach clubs, and classy dinners.',
+    sizes: ['Single Sconce', 'Matching Symmetrical Duo'],
+    stock: 14,
+    description: 'Bring soft celestial illumination into corridors or bedrooms. Carved by hand to form an elegant shallow arch, raw Spanish alabaster acts as a powerful natural diffuser, washing walls with warm architectural backlighting.',
     details: [
-      'Durable soft-brushed genuine premium suede',
-      'Custom gold buckle embellishment accent',
-      'Padded anti-friction heel counter slip'
+      'Spanish alabaster stone diffuser shields',
+      'Solid antique brushed brass mounting components',
+      'Dimmable, low-draw premium warm-temperature LED panel included',
+      'UL-listed electronics for pristine safety standard compliance'
     ],
     features: [
-      'Extremely flexible grip driving soles',
-      'Premium leather instep cushioning',
-      'Pre-treated protective coating shields from dirt'
+      'Unique semi-transparent stone grain patterning on every sconce',
+      'Includes solid brass hand-screws and spacer sleeves',
+      'Fully customizable dynamic flush mount hardware configurations'
     ],
     reviews: [
-      { id: 'r10', author: 'Julien T.', rating: 4.5, date: '2026-05-30', comment: 'Supremely elegant look. Looks rich, feels extremely comfy.', verified: true }
+      { id: 'r4', author: 'Julian T.', rating: 5, date: '2026-05-18', comment: 'Produces the warmest, softest indirect glow. Highly recommend pair flanking a mirror.', verified: true }
     ],
     newArrival: true
   },
   {
-    id: 'gb-08',
-    name: 'Astral White Velvet Court',
-    tagline: 'Clean white sneaker upgraded with luxury velvet trim.',
-    category: 'Women\'s Sneakers',
-    price: 260,
+    id: 'eh-04',
+    name: 'Honed Travertine Pedestal',
+    tagline: 'Architectural display plinth for prized gallery treasures.',
+    category: 'Decors',
+    price: 380,
     rating: 4.9,
     images: [
-      'https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80'
+      'https://images.unsplash.com/photo-1578500494198-246f612d3b3d?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=800&q=80'
     ],
     colors: [
-      { name: 'Celestial White Gold', class: 'bg-white border select-amber-100', value: '#FFFFFF' },
-      { name: 'Blush Velvet Dust', class: 'bg-pink-100', value: '#FBCFE8' }
+      { name: 'Classic Cream Travertine', class: 'bg-[#ECE5D8]', value: '#ECE5D8' },
+      { name: 'Nero Marble block', class: 'bg-zinc-900', value: '#18181B' }
     ],
-    sizes: [6, 7, 8, 9, 10],
-    stock: 12,
-    description: 'Elevate your daily stroll. Blending architectural white contours with golden heels and velvety accents, this classic women’s tennis trainer redefines premium simplicity.',
+    sizes: ['Tall Pedestal (36")', 'Medium Pedestal (28")', 'Tabletop Pedestal (12")'],
+    stock: 8,
+    description: 'Elevate your gallery. Hand-cut and finely wet-polished with a matte honed finish, this geometric plinth forms a perfect presentation anchor for pottery, plants, or abstract clay work.',
     details: [
-      'Triple white grain and velvet panel assembly',
-      'Discrete cushioned gold leaf crown badge',
-      'Impact absorbing compound footbeds'
+      'Precision mitered monolithic geometric column',
+      'Soft non-scratch chamfered frame borders',
+      'Reinforced internal stability composite skeleton core'
     ],
     features: [
-      'A true timeless minimal silhouette design',
-      'Water resistant shell coatings',
-      'Gold eyelets and custom metal branding plates'
+      'A true timeless minimal display layout',
+      'Matte satin polish feels incredibly smooth to the touch',
+      'Provides a perfect sculptural anchor for curated spaces'
     ],
     reviews: [
-      { id: 'r11', author: 'Mia C.', rating: 5, date: '2026-06-03', comment: 'Stunning design! The white stays surprisingly clean, and the tiny gold finish is super fancy.', verified: true }
+      { id: 'r5', author: 'Mia C.', rating: 5, date: '2026-06-03', comment: 'I place my dried foliage vase on this in the hallway, and it looks like a museum display.', verified: true }
     ],
     featured: true,
     bestSeller: true
   },
   {
-    id: 'gb-09',
-    name: 'Blendi Retro Retroscape',
-    tagline: 'Duo-tone retro canvas sneakers for modern curators.',
-    category: 'Casual Shoes',
+    id: 'eh-05',
+    name: 'Belgian Washed Linen Duvet Set',
+    tagline: 'Unsurpassed breathability and soft organic relaxed drape.',
+    category: 'Interiors',
+    price: 260,
+    rating: 4.8,
+    images: [
+      'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80'
+    ],
+    colors: [
+      { name: 'Dune Sand', class: 'bg-[#D2C5B4]', value: '#D2C5B4' },
+      { name: 'Pure Chalk', class: 'bg-[#FAFAFA] border border-gray-200', value: '#FAFAFA' },
+      { name: 'Silt Gray', class: 'bg-[#8F8D88]', value: '#8F8D88' }
+    ],
+    sizes: ['Queen Sleeper Suite', 'King Master Suite'],
+    stock: 12,
+    description: 'Crafted from premium certified flax grown inside Belgium, our linen duvet undergoes a natural quartz wash treatment. It arrives exceptionally soft, highly breathable, and drapes with elegant slouchy poise.',
+    details: [
+      '100% natural long-staple flax linen textiles',
+      'Double-stitched safety seams with raw edge look highlights',
+      'Includes duvet cover and two hand-enveloping standard shams'
+    ],
+    features: [
+      'Naturally thermo-regulating fibers stay cool in summer, warm in winter',
+      'Beautiful organic texture that grows softer with every washing cycle',
+      'Fastened by hand-sewn coconut shell interior buttons'
+    ],
+    reviews: [
+      { id: 'r6', author: 'Clara del P.', rating: 5, date: '2026-06-08', comment: 'The texture is incredibly raw and elegant. I never want to sleep on cotton again!', verified: true }
+    ],
+    featured: true,
+    newArrival: true
+  },
+  {
+    id: 'eh-06',
+    name: 'Fluted Terracotta Vessel',
+    tagline: 'Baked earthen clay capturing centuries of rustic Nigerian pottery.',
+    category: 'Decors',
     price: 185,
     rating: 4.6,
     images: [
-      'https://images.unsplash.com/photo-1607522370275-f14206abe5d3?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1512374382149-233c42b6a83b?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80'
+      'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=800&q=80'
     ],
     colors: [
-      { name: 'Forte Red', class: 'bg-red-700', value: '#B91C1C' },
-      { name: 'Onyx Black Stripe', class: 'bg-zinc-900', value: '#18181B' }
+      { name: 'Baked Umber', class: 'bg-[#C06C4C]', value: '#C06C4C' },
+      { name: 'Chalk White Glaze', class: 'bg-[#F2EEED]', value: '#F2EEED' }
     ],
-    sizes: [7, 8, 9, 10, 11, 12],
+    sizes: ['Tabletop 14"', 'Floor Large 22"'],
     stock: 20,
-    description: 'Heritage street aesthetic meets state-of-the-art foot-bed comfort. This classic distressed vulcanized low-rise has double-reinforced canvas with protective front caps and custom brass eyelets.',
+    description: 'A striking meeting of organic soil and fire. Molded using traditional methods by expert regional ceramists, each pot features hand-scraped fluting lines styled to create subtle shadows in ambient daylight.',
     details: [
-      'Heavy-duty 16oz raw military cotton canvas',
-      'Signature brass ventilation brass eyelet rings',
-      'Triple vulcanized structural foot walls'
+      '100% organic locally-sourced riverbed clays',
+      'Individually wood-fired inside traditional outdoor kilns',
+      'Water-resistant internal glaze coating'
     ],
     features: [
-      'Extra cushioning memory foam inner sole',
-      'Classic heritage side stars custom-stitch',
-      'High friction heavy chevron grip patterns'
+      'Textured raw earthen finish preserves tool marks and natural soot gradients',
+      'Thick, highly durable structural walls prevent stress-cracks',
+      'Works beautifully as standalone dry-stem display piece'
     ],
     reviews: [
-      { id: 'r12', author: 'Oliver G.', rating: 4.8, date: '2026-06-05', comment: 'Very sturdy, looks amazing with cuffed trousers. Durable vulcanized side rubber!', verified: true }
+      { id: 'r7', author: 'Oliver G.', rating: 4.8, date: '2026-06-05', comment: 'The soot marks on the raw clay are incredibly gorgeous. Brings instant organic warmth.', verified: true }
     ]
   },
   {
-    id: 'gb-10',
-    name: 'Elysium Knit Runner',
-    tagline: 'Breathtakingly comfortable sock-like knit lifestyle trainers.',
-    category: 'Men\'s Sneakers',
-    price: 230,
-    rating: 4.8,
-    images: [
-      'https://images.unsplash.com/photo-1512374382149-233c42b6a83b?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=800&q=80'
-    ],
-    colors: [
-      { name: 'Amber Gold Fusion', class: 'bg-yellow-600', value: '#D97706' },
-      { name: 'Neutral Dune', class: 'bg-orange-100', value: '#FFEDD5' }
-    ],
-    sizes: [7, 8, 9, 10, 11, 12],
-    stock: 9,
-    description: 'The Elysium Knit sports a sophisticated weave pattern that fits perfectly like a custom technical sock. Supported by premium elastic support laces and architectural shock-gaps, it pairs beautifully with high streetwear wear.',
-    details: [
-      'Advanced 3D warp knit seamless construction',
-      'Sleek elastic bungee compression laces',
-      'Double density impact reaction midsole layers'
-    ],
-    features: [
-      'Unbelievably snug sock collar design fits true to shape',
-      'Laser-vented thermal extraction zones',
-      'Heel safety stabilizing balance plates'
-    ],
-    reviews: [
-      { id: 'r13', author: 'Liam S.', rating: 5, date: '2026-04-20', comment: 'Like slipping into a custom glove for your feet. Hands down the coziest shoes I own.', verified: true }
-    ],
-    newArrival: true
-  },
-  {
-    id: 'gb-11',
-    name: 'Suede Seraph Trail-Knit',
-    tagline: 'Heavily rugged lifestyle hiker merged with premium materials.',
-    category: 'Casual Shoes',
-    price: 280,
+    id: 'eh-07',
+    name: 'Raw Silk Accent Pillow Trio',
+    tagline: 'Sumptuous tactile richness hand-spun into pure dupioni silk.',
+    category: 'Decors',
+    price: 150,
     rating: 4.7,
     images: [
-      'https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=800&q=80'
+      'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80'
     ],
     colors: [
-      { name: 'Taupe Forest', class: 'bg-emerald-800', value: '#064E3B' },
-      { name: 'Dune Sand', class: 'bg-stone-300', value: '#D6D3D1' }
+      { name: 'Ochre Amber', class: 'bg-[#D4A359]', value: '#D4A359' },
+      { name: 'Moss Olive', class: 'bg-[#606E54]', value: '#606E54' }
     ],
-    sizes: [7, 8, 9, 10, 11, 12],
-    stock: 7,
-    description: 'Conquer urban mountains with grace. Built with premium water-repellent performance suede, a rubber protective toe mudguard, and high strength trail laces with discrete direct gold weave.',
+    sizes: ['Set of 3 (18" x 18")', 'Atelier Single Accent'],
+    stock: 19,
+    description: 'Indulge in organic beauty. These pure dupioni silk pillows feature heavy wild-slub threading, creating a warm tactile sheen that pairs gracefully with rough linen or velvet sofas.',
     details: [
-      'Fine Kano split calf suede panels',
-      'Heavy lugged rubber Vibram-inspired grip soles',
-      'Dampening layers for extreme pavement walking shock'
+      'Hand-woven wild silk casing covers with neat hidden zips',
+      '95% premium down / 5% duck feather pillow inserts included',
+      'Spun and woven by a rural women cooperative'
     ],
     features: [
-      'Premium metal speed harness hooks',
-      'Integrated storm shield guard gussets',
-      'Durable custom reinforced double lines'
+      'Raw, unrefined silk textures catch light in dynamic, glossy waves',
+      'Double-stitched structural piping protects seams from fraying',
+      'Hypoallergenic feather-proof heavy cotton inner guards'
     ],
     reviews: [
-      { id: 'r14', author: 'Henry T.', rating: 4.7, date: '2026-05-11', comment: 'Fantastic trail elements. Outstanding premium feeling.', verified: true }
-    ]
+      { id: 'r8', author: 'Julien T.', rating: 5, date: '2026-05-30', comment: 'Incredibly plump fill, and the slub silk material has a very expensive sheen.', verified: true }
+    ],
+    newArrival: true
   },
   {
-    id: 'gb-12',
-    name: 'Blendi Sovereign Court Low',
-    tagline: 'Hand stitched bespoke sneaker with sleek profile.',
-    category: 'Luxury Footwear',
-    price: 450,
+    id: 'eh-08',
+    name: 'Solid White Oak Credenza',
+    tagline: 'Meticulously crafted storage with seamless sliding tambours.',
+    category: 'Furniture',
+    price: 1850,
     rating: 4.9,
     images: [
-      'https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=800&q=80'
+      'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80'
     ],
     colors: [
-      { name: 'Sovereign White Gold', class: 'bg-stone-50 border select-amber-100', value: '#FAF9F6' },
-      { name: 'Luxury Onyx Gold', class: 'bg-neutral-850', value: '#262626' }
+      { name: 'Bleached Oak', class: 'bg-[#EADECE]', value: '#EADECE' },
+      { name: 'Ebonized Walnut', class: 'bg-[#3A3530]', value: '#3A3530' }
     ],
-    sizes: [7, 8, 9, 10, 11, 12],
-    stock: 3,
-    description: 'The ultimate signature Gene Bendi asset. Fully lined in glove leather with bespoke double welt construction and micro hand engraving. Adorned with a solid gold-plated brand badge near the top lace.',
+    sizes: ['60" Credenza', '72" Grand Centerpiece'],
+    stock: 2,
+    description: 'The epitome of heritage woodworking. Highlighted by seamless wrapping solid wood tambour panels, this master cabinet offers extensive internal shelving, soft-close drawers, and elegant wire management ports.',
     details: [
-      'Fully lined in buttery soft French calfskin',
-      'Signature real gold plated signature hardware brand medallion',
-      'Entirely handcrafted in Lagos, Nigeria'
+      'Sustainably harvested FSC-certified solid European white oak',
+      'Extremely smooth natural Danish oil and matte satin polyurethane coat',
+      'Precision precision wood mortise-and-tenon joints throughout'
     ],
     features: [
-      'Limitless refinement, individual production numbering',
-      'Unsurpassed walking alignment and comfort core',
-      'Arrives inside handmade velvet presentation box with solid cedar shoe stabilizers'
+      'Tambour doors slide smoothly into internal pockets to reveal beautiful storage spaces',
+      'Subtle integrated solid wood handles milled directly into frames',
+      'Hand-numbered and registered by chief cabinetmaker'
     ],
     reviews: [
-      { id: 'r15', author: 'Clara del P.', rating: 5, date: '2026-06-08', comment: 'This is not just footwear, it is a magnificent work of high craftsmanship. Worth every single cent.', verified: true }
+      { id: 'r9', author: 'Edward H.', rating: 5, date: '2026-05-02', comment: 'Bespoke heirloom quality. The tambour door action is whisper-quiet and satisfyingly smooth.', verified: true }
     ],
     featured: true,
-    newArrival: true
+    bestSeller: true
   }
 ];

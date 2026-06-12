@@ -6,7 +6,7 @@ import { SlidersHorizontal, Search, RefreshCw, X, ArrowUpDown, ChevronDown } fro
 interface ShopSectionProps {
   products: Product[];
   onViewDetails: (id: string) => void;
-  onAddToCart: (product: Product, size: number, color: string) => void;
+  onAddToCart: (product: Product, size: string, color: string) => void;
   wishlist: string[];
   onToggleWishlist: (id: string, e: React.MouseEvent) => void;
 }
@@ -20,24 +20,24 @@ export default function ShopSection({
 }: ShopSectionProps) {
   // Filter states
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const [selectedSize, setSelectedSize] = useState<number | null>(null);
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
-  const [maxPrice, setMaxPrice] = useState<number>(500);
+  const [maxPrice, setMaxPrice] = useState<number>(2000);
   const [sortOption, setSortOption] = useState<string>('featured');
   const [isSortOpen, setIsSortOpen] = useState(false);
   const [localSearch, setLocalSearch] = useState<string>('');
 
   // Static list of possible values
-  const categories = ['All', 'Luxury Footwear', 'Men\'s Sneakers', 'Women\'s Sneakers', 'Running Shoes', 'Casual Shoes'];
-  const sizes = [5, 6, 7, 8, 9, 10, 11, 12, 13];
+  const categories = ['All', 'Furniture', 'Decors', 'Interiors'];
+  const sizes = ['Standard', 'Grande', 'Atelier', 'Custom', 'Suite', 'Studio'];
   
   const colors = [
-    { name: 'Black', class: 'bg-zinc-900 border border-zinc-800' },
-    { name: 'White', class: 'bg-white border border-zinc-200' },
-    { name: 'Gold', class: 'bg-amber-500' },
-    { name: 'Red', class: 'bg-red-600' },
-    { name: 'Sand', class: 'bg-amber-100' },
-    { name: 'Gray', class: 'bg-zinc-500' },
+    { name: 'Oatmeal', class: 'bg-[#F5F2EB] border border-stone-250', value: '#F5F2EB' },
+    { name: 'Sable', class: 'bg-[#2B2B2A]', value: '#2B2B2A' },
+    { name: 'Sage', class: 'bg-[#5C6656]', value: '#5C6656' },
+    { name: 'Travertine', class: 'bg-[#ECE5D8] border border-stone-200', value: '#ECE5D8' },
+    { name: 'Chalk', class: 'bg-[#FAFAFA] border border-stone-250', value: '#FAFAFA' },
+    { name: 'Umber', class: 'bg-[#C06C4C]', value: '#C06C4C' }
   ];
 
   // Computation of filtered and sorted products
@@ -62,7 +62,9 @@ export default function ShopSection({
 
     // 3. Size filter
     if (selectedSize !== null) {
-      list = list.filter((p) => p.sizes.includes(selectedSize));
+      list = list.filter((p) =>
+        p.sizes.some((sz) => sz.toLowerCase().includes(selectedSize.toLowerCase()))
+      );
     }
 
     // 4. Color filter
@@ -93,7 +95,7 @@ export default function ShopSection({
     setSelectedCategory('All');
     setSelectedSize(null);
     setSelectedColor(null);
-    setMaxPrice(500);
+    setMaxPrice(2000);
     setSortOption('featured');
     setLocalSearch('');
   };
@@ -102,22 +104,22 @@ export default function ShopSection({
     selectedCategory !== 'All' ||
     selectedSize !== null ||
     selectedColor !== null ||
-    maxPrice < 500 ||
+    maxPrice < 2000 ||
     localSearch !== '';
 
   return (
     <div id="shop-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 bg-white text-black">
       
       {/* Header and banner of shop archivism */}
-      <div className="border-b border-gray-200 pb-8 mb-10 text-center md:text-left">
+      <div className="border-b border-gray-200 pb-8 mb-10 text-center md:text-left font-serif">
         <p className="text-[10px] font-mono tracking-[0.3em] text-[#D4AF37] uppercase">
-          GENE BENDI ATELIER SHOP
+          HELYN HILLS <span className="lowercase">interiors</span> ARCHIVES
         </p>
-        <h1 className="text-4xl sm:text-5xl font-serif text-black mt-1 leading-tight text-luxury">
-          The Footwear Archives
+        <h1 className="text-4xl sm:text-5xl font-light text-black mt-1 leading-tight text-luxury">
+          Heritage Collections
         </h1>
-        <p className="text-xs text-gray-500 mt-2 font-light max-w-2xl leading-relaxed">
-          Sift through our digital vaults. Every dynamic release is detailed by weight, precise metric parameters, and bespoke production sequences.
+        <p className="text-xs text-gray-500 mt-2 font-light max-w-2xl leading-relaxed font-sans">
+          Curated statement furniture, handcrafted organic decors, and artisanal interior lighting designed to bring warmth and timeless grace to residential galleries.
         </p>
       </div>
 
@@ -188,14 +190,14 @@ export default function ShopSection({
           {/* Filter block 3: Sizes */}
           <div className="space-y-3">
             <h4 className="text-[10px] font-bold font-mono tracking-widest text-gray-650 uppercase">
-              SIZING (US METRIC)
+              ATELIER SCALE
             </h4>
-            <div className="grid grid-cols-4 gap-1.5">
+            <div className="grid grid-cols-2 gap-1.5">
               {sizes.map((size) => (
                 <button
                   key={size}
                   onClick={() => setSelectedSize(selectedSize === size ? null : size)}
-                  className={`border py-2 text-xs font-mono rounded tracking-widest transition-colors cursor-pointer ${
+                  className={`border py-2 text-[10px] font-mono rounded tracking-widest transition-colors cursor-pointer ${
                     selectedSize === size
                       ? 'bg-black border-black text-white font-bold'
                       : 'bg-white border-gray-200 text-gray-700 hover:border-black hover:text-black hover:bg-gray-50'
@@ -210,7 +212,7 @@ export default function ShopSection({
           {/* Filter block 4: Colors */}
           <div className="space-y-3">
             <h4 className="text-[10px] font-bold font-mono tracking-widest text-gray-650 uppercase">
-              MEMBRANE COLOURS
+              MATERIAL FINISH
             </h4>
             <div className="flex flex-wrap gap-2.5">
               {colors.map((col) => (
@@ -240,16 +242,16 @@ export default function ShopSection({
             </div>
             <input
               type="range"
-              min="150"
-              max="500"
-              step="10"
+              min="100"
+              max="2000"
+              step="50"
               value={maxPrice}
               onChange={(e) => setMaxPrice(parseInt(e.target.value))}
               className="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#D4AF37] focus:outline-none"
             />
             <div className="flex justify-between text-[9px] font-mono text-gray-500">
-              <span>$150</span>
-              <span>$500</span>
+              <span>$100</span>
+              <span>$2000</span>
             </div>
           </div>
         </aside>
@@ -261,7 +263,7 @@ export default function ShopSection({
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 bg-gray-50 p-4 border border-gray-200 rounded-lg">
             <div className="text-xs font-mono text-gray-600">
               Showing <span className="text-black font-bold">{processedProducts.length}</span> of{' '}
-              <span className="text-gray-500">{products.length}</span> luxury footwear editions
+              <span className="text-gray-500">{products.length}</span> bespoke interior releases
             </div>
 
             {/* Sorting trigger dropdown */}
@@ -337,7 +339,7 @@ export default function ShopSection({
               )}
               {selectedSize !== null && (
                 <span className="inline-flex items-center space-x-1.5 px-2.5 py-1 bg-white text-[10px] font-mono text-gray-700 rounded-full border border-gray-200 shadow-sm">
-                  <span>Size: US {selectedSize}</span>
+                  <span>Scale: {selectedSize}</span>
                   <X className="w-3 h-3 text-gray-400 hover:text-black cursor-pointer" onClick={() => setSelectedSize(null)} />
                 </span>
               )}

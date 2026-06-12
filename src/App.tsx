@@ -18,7 +18,7 @@ import { ShoppingBag, ChevronRight, Lock, CheckCircle, Truck, MapPin, Sparkles, 
 interface CartItem {
   id: string; // unique cart entry key (product.id + selectedSize + selectedColor)
   product: Product;
-  selectedSize: number;
+  selectedSize: string;
   selectedColor: string;
   quantity: number;
 }
@@ -52,19 +52,19 @@ export default function App() {
   // Pre-seed 1 past flight order tracker so users have dynamic content to track immediately
   const [orderHistory, setOrderHistory] = useState<OrderHistoryEntry[]>([
     {
-      id: 'GB-2026-N92F',
+      id: 'HH-2026-N92F',
       date: '2026-06-11',
       items: [
         {
-          id: 'gb-05-9-Raven Black Leather',
-          product: PRODUCTS[4], // Chelsea Sovereign Boot
-          selectedSize: 9,
-          selectedColor: 'Raven Black Leather',
+          id: 'hh-01-Standard-Oatmeal',
+          product: PRODUCTS[0], 
+          selectedSize: 'Standard Lounge',
+          selectedColor: 'Oatmeal Bouclé',
           quantity: 1
         }
       ],
-      totalPrice: 420,
-      status: 'COUR FLIGHT TRANSIT LAGOS &bull; IN FLIGHT',
+      totalPrice: 1012,
+      status: 'WHITE-GLOVE ATELIER TRANSIT DISPATCH',
       shippingDetails: {
         name: 'VIP Collector Nathan',
         address: '100 Rodeo Drive Apt 3C',
@@ -129,7 +129,7 @@ export default function App() {
   };
 
   // Add items cart handler
-  const handleAddToCart = (product: Product, size: number, color: string) => {
+  const handleAddToCart = (product: Product, size: string, color: string) => {
     const entryId = `${product.id}-${size}-${color}`;
     const newCart = [...cart];
     const existingIndex = newCart.findIndex((item) => item.id === entryId);
@@ -199,7 +199,7 @@ export default function App() {
   // Apply Coupon code
   const handleApplyCoupon = (code: string) => {
     const c = code.toUpperCase().trim();
-    if (c === 'GOLD20' || c === 'BLENDI20' || c === 'EXCELLENCE15') {
+    if (c === 'GOLD20' || c === 'HELYN20' || c === 'EXCELLENCE15') {
       setCouponCode(c);
       setCouponSuccess(true);
     } else {
@@ -222,11 +222,11 @@ export default function App() {
 
   // Checkout purchase order simulation
   const handleOrderPlace = (shippingDetails: any) => {
-    const orderId = `GB-2026-X${Math.floor(100 + Math.random() * 899)}${String.fromCharCode(65 + Math.floor(Math.random() * 26))}`;
+    const orderId = `HH-2026-X${Math.floor(100 + Math.random() * 899)}${String.fromCharCode(65 + Math.floor(Math.random() * 26))}`;
     
     // Math computations
     const subtotal = cart.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
-    const discountRate = couponSuccess ? (couponCode === 'BLENDI20' ? 0.2 : 0.15) : 0;
+    const discountRate = couponSuccess ? (couponCode === 'HELYN20' ? 0.2 : 0.15) : 0;
     const discountTotal = subtotal * discountRate;
     const estimatedVat = (subtotal - discountTotal) * 0.1;
 
@@ -235,7 +235,7 @@ export default function App() {
       date: new Date().toISOString().split('T')[0],
       items: [...cart],
       totalPrice: Math.round((subtotal - discountTotal + estimatedVat) * 100) / 100,
-      status: 'CRAFTING SPECIALIST ASSIGNMENT &bull; VERMED',
+      status: 'DESIGN COMMISSION & VERIFICATION',
       shippingDetails,
     };
 
@@ -273,7 +273,7 @@ export default function App() {
     const randomProduct = PRODUCTS[Math.floor(Math.random() * PRODUCTS.length)];
     const randomSize = randomProduct.sizes[Math.floor(Math.random() * randomProduct.sizes.length)];
     const randomColor = randomProduct.colors[Math.floor(Math.random() * randomProduct.colors.length)].name;
-    const orderId = `GB-2026-X${Math.floor(100 + Math.random() * 899)}${String.fromCharCode(65 + Math.floor(Math.random() * 26))}`;
+    const orderId = `HH-2026-X${Math.floor(100 + Math.random() * 899)}${String.fromCharCode(65 + Math.floor(Math.random() * 26))}`;
     
     const simulatedItem = {
       id: `${randomProduct.id}-${randomSize}-${randomColor}`,
@@ -291,7 +291,7 @@ export default function App() {
       date: new Date().toISOString().split('T')[0],
       items: [simulatedItem],
       totalPrice: Math.round(total * 100) / 100,
-      status: 'CRAFTING SPECIALIST ASSIGNMENT &bull; VERMED',
+      status: 'DESIGN COMMISSION & VERIFICATION',
       shippingDetails: {
         name: randomName,
         address: `${Math.floor(10 + Math.random() * 90)}, Cooper Road, Ground level`,
@@ -308,7 +308,7 @@ export default function App() {
 
   // Calculate shopping cart summary values
   const cartSubtotal = cart.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
-  const discountRate = couponSuccess ? (couponCode === 'BLENDI20' ? 0.2 : 0.15) : 0;
+  const discountRate = couponSuccess ? (couponCode === 'HELYN20' ? 0.2 : 0.15) : 0;
   const cartDiscount = cartSubtotal * discountRate;
   const cartVat = (cartSubtotal - cartDiscount) * 0.1;
   const cartGrandTotal = cartSubtotal - cartDiscount + cartVat;
@@ -421,7 +421,7 @@ export default function App() {
                         <div>
                           <span className="text-[9px] font-mono text-gold-600 uppercase tracking-widest">{item.product.category}</span>
                           <h4 className="text-sm font-semibold text-gray-900">{item.product.name}</h4>
-                          <p className="text-xs text-gray-500 font-mono mt-0.5">SIZE: US {item.selectedSize} &bull; TONE: {item.selectedColor}</p>
+                          <p className="text-xs text-gray-500 font-mono mt-0.5">SCALE: {item.selectedSize} &bull; TONE: {item.selectedColor}</p>
                           <span className="text-xs font-mono text-gray-700 block sm:hidden mt-1">${item.product.price}</span>
                         </div>
                       </div>
@@ -598,7 +598,7 @@ export default function App() {
               <div className="space-y-2 text-xs">
                 {latestPlacedOrder.items.map((it, idx) => (
                   <div key={idx} className="flex justify-between font-mono text-gray-700">
-                    <span>{it.product.name} (US {it.selectedSize} &bull; {it.selectedColor}) x{it.quantity}</span>
+                    <span>{it.product.name} ({it.selectedSize} &bull; {it.selectedColor}) x{it.quantity}</span>
                     <span className="text-[#D4AF37]">${it.product.price}</span>
                   </div>
                 ))}

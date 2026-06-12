@@ -5,7 +5,7 @@ import { Star, Shield, Info, HelpCircle, Heart, ArrowLeft, StarOff, Sparkles, Ch
 interface ProductDetailsSectionProps {
   product: Product;
   onBackToShop: () => void;
-  onAddToCart: (product: Product, size: number, color: string) => void;
+  onAddToCart: (product: Product, size: string, color: string) => void;
   wishlist: string[];
   onToggleWishlist: (id: string, e: React.MouseEvent) => void;
   allProducts: Product[];
@@ -22,7 +22,7 @@ export default function ProductDetailsSection({
   onSelectProduct,
 }: ProductDetailsSectionProps) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const [selectedSize, setSelectedSize] = useState<number | null>(null);
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [sizeChartOpen, setSizeChartOpen] = useState(false);
   const [sizeWarning, setSizeWarning] = useState(false);
@@ -108,7 +108,7 @@ export default function ProductDetailsSection({
         className="inline-flex items-center space-x-2 text-xs font-mono text-gray-500 hover:text-[#D4AF37] uppercase tracking-widest mb-10 transition-colors py-2 cursor-pointer"
       >
         <ArrowLeft className="w-4 h-4" />
-        <span>BACK TO FOOTWEAR COLLECTION</span>
+        <span>BACK TO GALLERY CATALOG</span>
       </button>
 
       {/* Primary columns */}
@@ -160,7 +160,7 @@ export default function ProductDetailsSection({
                 />
               </div>
               <p className="text-[10px] text-gray-400 font-mono text-center mt-2 tracking-widest uppercase">
-                &bull; Hover cursor over leather elements to Zoom Craft Details &bull;
+                &bull; Hover cursor over image to Zoom Fine Craft Textures &bull;
               </p>
             </div>
 
@@ -196,7 +196,7 @@ export default function ProductDetailsSection({
             </div>
           </div>
 
-          <p className="text-xs sm:text-sm text-gray-700 font-light leading-relaxed">
+          <p className="text-xs sm:text-sm text-gray-700 font-light leading-relaxed font-sans">
             {product.description}
           </p>
 
@@ -205,39 +205,41 @@ export default function ProductDetailsSection({
             {/* Sizing Interactive selections */}
             <div className="space-y-3">
               <div className="flex items-center justify-between text-xs text-gray-600 font-mono">
-                <span className="tracking-widest uppercase">SELECT SIZE (US)</span>
+                <span className="tracking-widest uppercase">SELECT ATELIER SCALE</span>
                 <button
+                  type="button"
                   onClick={() => setSizeChartOpen(!sizeChartOpen)}
                   className="text-[#D4AF37] hover:text-black flex items-center space-x-1 uppercase tracking-wider text-[11px] cursor-pointer"
                 >
                   <Info className="w-3.5 h-3.5" />
-                  <span>Interactive Size Chart</span>
+                  <span>Dimension Details</span>
                 </button>
               </div>
 
               {/* Grid sizing blocks */}
-              <div className="grid grid-cols-5 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                 {product.sizes.map((size) => (
                   <button
                     key={size}
+                    type="button"
                     onClick={() => {
                       setSelectedSize(size);
                       setSizeWarning(false);
                     }}
-                    className={`border py-3 rounded text-xs font-mono tracking-widest transition-colors cursor-pointer ${
+                    className={`border py-3 px-2 rounded text-[11px] font-mono tracking-widest transition-colors cursor-pointer text-center ${
                       selectedSize === size
                         ? 'bg-black border-black text-white font-bold'
                         : 'bg-white border-gray-250 text-gray-700 hover:border-black hover:text-black hover:bg-gray-50'
                     }`}
                   >
-                    US {size}
+                    {size}
                   </button>
                 ))}
               </div>
 
               {sizeWarning && (
                 <p className="text-[11px] text-red-500 font-mono uppercase tracking-widest">
-                  &bull; Please click your desired size option to proceed.
+                  &bull; Please select an atelier scale to proceed.
                 </p>
               )}
 
@@ -245,45 +247,25 @@ export default function ProductDetailsSection({
               {sizeChartOpen && (
                 <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg mt-2 animate-fade-in text-xs font-mono text-gray-600 space-y-3">
                   <div className="flex justify-between border-b border-gray-205 pb-2">
-                    <span className="font-bold text-black uppercase tracking-wider">US SIZE</span>
-                    <span className="font-bold text-gray-500">EU COUNTERPART</span>
-                    <span className="font-bold text-[#D4AF37]">FOOT CORRESPONDENCE</span>
+                    <span className="font-bold text-black uppercase tracking-wider">SCALE OPTION</span>
+                    <span className="font-bold text-gray-500">PROPORTION DESCRIPTION</span>
+                    <span className="font-bold text-[#D4AF37]">SUITABILITY</span>
                   </div>
                   <div className="space-y-1.5 text-[11px]">
                     <div className="flex justify-between border-b border-gray-100 pb-1">
-                      <span>US 6</span>
-                      <span>EU 38.5</span>
-                      <span>24.0 cm (9.4 in)</span>
+                      <span>Standard / Studio</span>
+                      <span>Regular, streamlined proportions</span>
+                      <span>Elegant cozy living areas</span>
                     </div>
                     <div className="flex justify-between border-b border-gray-100 pb-1">
-                      <span>US 7</span>
-                      <span>EU 40</span>
-                      <span>25.0 cm (9.8 in)</span>
+                      <span>Grande / Salon</span>
+                      <span>Expanded volumetric profile</span>
+                      <span>High ceiling gallery lounges</span>
                     </div>
                     <div className="flex justify-between border-b border-gray-100 pb-1">
-                      <span>US 8</span>
-                      <span>EU 41</span>
-                      <span>26.0 cm (10.2 in)</span>
-                    </div>
-                    <div className="flex justify-between border-b border-gray-100 pb-1">
-                      <span>US 9</span>
-                      <span>EU 42.5</span>
-                      <span>27.0 cm (10.6 in)</span>
-                    </div>
-                    <div className="flex justify-between border-b border-gray-100 pb-1">
-                      <span>US 10</span>
-                      <span>EU 44</span>
-                      <span>28.0 cm (11.0 in)</span>
-                    </div>
-                    <div className="flex justify-between border-b border-gray-100 pb-1">
-                      <span>US 11</span>
-                      <span>EU 45</span>
-                      <span>29.0 cm (11.4 in)</span>
-                    </div>
-                    <div className="flex justify-between border-b border-gray-100 pb-1">
-                      <span>US 12</span>
-                      <span>EU 46.5</span>
-                      <span>30.0 cm (11.8 in)</span>
+                      <span>Atelier / Custom</span>
+                      <span>Individually mapped dimensions</span>
+                      <span>Full bespoke room commissions</span>
                     </div>
                   </div>
                 </div>
@@ -337,11 +319,11 @@ export default function ProductDetailsSection({
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-500 uppercase font-bold text-[10px]">INVENTORY DEPTH</span>
-                <span className="text-[#D4AF37] font-bold">{product.stock} ARCHIVE PAIRS AVAILABLE</span>
+                <span className="text-[#D4AF37] font-bold">{product.stock} COMMISSION PIECES STOCKED</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-500 uppercase font-bold text-[10px]">WARRANTY</span>
-                <span>AUTHENTIC NIGERIAN ORIGINS SEAL</span>
+                <span className="text-gray-500 uppercase font-bold text-[10px]">CERTIFICATION</span>
+                <span>HELYN HILLS INTERIOR SEAL</span>
               </div>
             </div>
 

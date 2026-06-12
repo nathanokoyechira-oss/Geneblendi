@@ -11,38 +11,38 @@ export function AboutView() {
       
       {/* Brand Header */}
       <div className="border-b border-gray-200 pb-8 text-center max-w-3xl mx-auto space-y-3">
-        <p className="text-[10px] font-mono tracking-[0.3em] text-[#D4AF37] uppercase">THE ARCHIVAL HERITAGE</p>
-        <h1 className="text-4xl sm:text-5xl font-serif text-black uppercase tracking-wider text-luxury">The House of Gene Bendi</h1>
+        <p className="text-[10px] font-mono tracking-[0.3em] text-[#D4AF37] uppercase">THE DESIGN HERITAGE</p>
+        <h1 className="text-4xl sm:text-5xl font-serif text-black uppercase tracking-wider text-luxury">The Studio of Helyn Hills</h1>
         <p className="text-xs text-gray-500 font-light leading-relaxed">
-          Blending raw streetwear architectural forms with centuries-old traditional Nigerian leathercraft.
+          Blending raw organic architectural parameters with elegant, timeless domestic styling.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
-          <h2 className="text-2xl font-serif text-black font-semibold italic">"The perfect shoe bridges the gap between gravity and poise."</h2>
+          <h2 className="text-2xl font-serif text-black font-semibold italic">"The perfect living space bridges the gap between structure and soul."</h2>
           <p className="text-xs text-gray-700 leading-relaxed font-light">
-            Founded in 2018 in Lagos, Nigeria after master shoemaker Gene Bendi apprenticed for three decades in traditional Nigerian leather guilds and Florentine footwear ateliers. Bendi noticed a jarring discrepancy: modern street sneakers offered cloud-like foam rebound but fell apart in months; conversely, traditional leather dress boots looked rich but caused immediate sole fatigue during long urban strolls.
+            Founded with a vision to build custom furniture that breathes with natural organic poise. We noticed a jarring discrepancy: mass-produced contemporary couches and dining tables offered look-alike minimalism but lost joint strength and fabric beauty within months; conversely, heavy antique pieces looked premium but were too bulky and stiff for modern open-floor plans.
           </p>
           <p className="text-xs text-gray-700 leading-relaxed font-light">
-            Gene Bendi resolved to unify these disparate realms. He created a bespoke laboratory of twelve master artisans, sourcing hand-dyed glove calfskin, stitching them with heavy waxed linen threads, then inserting hidden internal matrices of space-grade carbon fiber and spring memory plates.
+            Helyn Hills resolved to bridge this gap. We created a collaborative collective of local woodwork painters and upholstery artisans, selecting sustainable solid heartwood ash, rub-polishing them with safe organic beeswax, and tailoring with custom loomed linen and Italian marble profiles.
           </p>
           <div className="pt-2">
-            <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest block font-bold">FOUNDER & CHIEF CO-CREATOR</span>
-            <span className="text-sm font-serif text-[#D4AF37] italic">Master Gene Bendi</span>
+            <span className="text-[10px] font-mono text-gray-550 uppercase tracking-widest block font-bold">CO-FOUNDERS & CHIEF DESIGNERS</span>
+            <span className="text-sm font-serif text-[#D4AF37] italic">Helyn & Daniel Hills</span>
           </div>
         </div>
 
         <div className="relative aspect-square rounded-xl overflow-hidden bg-gray-50 border border-gray-205 shadow-sm">
           <img
-            src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80"
-            alt="Gene Bendi Workshop inside florence"
+            src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80"
+            alt="Helyn Hills Workshop inside Milan"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover grayscale"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent" />
           <div className="absolute bottom-6 left-6">
-            <span className="text-xs font-mono text-white tracking-widest block uppercase font-bold">LAGOS LABORATORY</span>
+            <span className="text-xs font-mono text-white tracking-widest block uppercase font-bold">LAGOS STUDIO</span>
             <span className="text-[10px] text-zinc-350 font-mono mt-1 block">Est. 2018, Lagos, Nigeria</span>
           </div>
         </div>
@@ -69,7 +69,7 @@ export function ContactView({ userEmail = '' }: ContactViewProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const ticketId = `GB-CARE-${Math.floor(100000 + Math.random() * 900000)}`;
+    const ticketId = `EH-CARE-${Math.floor(100000 + Math.random() * 900000)}`;
     setSuccessTicket(ticketId);
     setName('');
     setMessage('');
@@ -82,7 +82,7 @@ export function ContactView({ userEmail = '' }: ContactViewProps) {
         <p className="text-[10px] font-mono tracking-[0.3em] text-[#D4AF37] uppercase">VIP CONCIERGE SERVICE</p>
         <h1 className="text-4xl sm:text-5xl font-serif text-black uppercase tracking-wider text-luxury">Aesthetic Concierge Desk</h1>
         <p className="text-xs text-gray-500 font-light leading-relaxed">
-          Ask custom sizing advice, seek press invitations, or coordinate bespoke order specifications directly.
+          Ask custom sizing advice, seek design invitations, or coordinate bespoke order specifications directly.
         </p>
       </div>
 
@@ -96,7 +96,7 @@ export function ContactView({ userEmail = '' }: ContactViewProps) {
             <div className="space-y-3 text-xs text-gray-705 font-mono">
               <div className="flex items-center space-x-2.5">
                 <Mail className="w-4 h-4 text-[#D4AF37]" />
-                <span className="select-all">concierge@geneblendi.luxury</span>
+                <span className="select-all">concierge@helynhills.design</span>
               </div>
               <div className="flex items-center space-x-2.5">
                 <Phone className="w-4 h-4 text-[#D4AF37]" />
@@ -230,24 +230,24 @@ export function FaqView() {
 
   const faqs = [
     {
-      q: 'How does the interactive sizing algorithm operate?',
-      a: 'Gene Bendi sizes fit exactly true to high-luxury standards. Since we use premium calfskin, the shoes naturally relax 2-3 millimeters after ten hours of active wear to form matching your skeletal contours. If you typically wear a half-size (e.g., US 9.5), we recommend selecting the next size up (e.g., US 10) for maximum breathing room.'
+      q: 'How do I choose the correct furniture dimensions for my space?',
+      a: 'Helyn Hills designs are crafted to generous standard scales. Our sizes (Standard, Grande, Atelier) fit standard layout plans beautifully. If you require specific custom adjustments, simply select the "Custom" scale on the product details page, and our design concierge will contact you within 24 hours to match your exact home layout.'
     },
     {
-      q: 'Where are Gene Bendi shoes constructed?',
-      a: 'Each pair is fully hand-sewn, crafted, and painted individually inside our premium ateliers in Lagos, Nigeria. We utilize full-grain leather sourced from world-renowned tanneries in Kano, custom outsoles, and carbon propulsion composite matrices.'
+      q: 'Where is Helyn Hills furniture crafted?',
+      a: 'Each furniture piece is entirely hand-built, joined, and manually rubbed individually in our dedicated design studio in Lagos, Nigeria. We select sustainable domestic hardwoods, Italian Calacatta Viola marbles, and premium textured loomed fabrics.'
     },
     {
-      q: 'What is the standard delivery shipping protocol?',
-      a: 'We offer complimentary express courier aviation shipping worldwide. Orders arrive in sturdy black-matte custom magnetic luxury boxes within 3-5 business days of dispatch. All duties and customs limits are pre-cleared by the Maison during check out.'
+      q: 'What is the standard delivery and room installation protocol?',
+      a: 'We offer complimentary white-glove transport on all commissions. Our logistics team coordinates a delivery schedule, brings your items straight to your room of choice, unboxes, and performs complimentary room installation with zero extra fees.'
     },
     {
-      q: 'Can I return or exchange a limited-edition series?',
-      a: 'Absolutely. We offer complimentary returns and exchanges on non-worn shoes inside original archival packaging within 30 days of standard receipt. Please test shoe alignment solely on clean indoor carpets.'
+      q: 'Can I request adjustments or cancellations for custom commissions?',
+      a: 'Yes. For pre-designed boutique catalogs, we offer complimentary returns within 30 days. For custom commissions, you can modify dimensions or cancel your order within 3 days of booking before our craftspeople begin cutting.'
     },
     {
-      q: 'How do I care for full-grain calf suede leather?',
-      a: 'Always clean suede using a soft-bristled horsehair brush in single structural directions. Avoid deep water immersion. Apply suede protective coats annually.'
+      q: 'How do I care for solid heartwood ash and waxed finishes?',
+      a: 'Dust wooden surfaces using a soft dry microfiber cloth. Re-apply a thin coat of organic beeswax or Danish wood-oil annually to preserve timber hydration and deep color grains. Avoid applying high-chemical spray solvents.'
     }
   ];
 
@@ -304,7 +304,7 @@ interface AccountViewProps {
   products: Product[];
   wishlist: string[];
   onRemoveWishlist: (id: string, e: React.MouseEvent) => void;
-  onAddToCart: (product: Product, size: number, color: string) => void;
+  onAddToCart: (product: Product, size: string, color: string) => void;
   orderHistory: any[];
 }
 
@@ -337,37 +337,37 @@ export function AccountView({
   const wishlistProducts = products.filter((p) => wishlist.includes(p.id));
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 bg-white text-black">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 bg-white text-black font-sans">
       
       {!isLoggedIn ? (
         /* Login / Register panels */
         <div className="max-w-md mx-auto bg-gray-50 p-8 rounded-xl border border-gray-200 shadow-sm space-y-6">
           <div className="text-center space-y-2">
-            <span className="text-[10px] font-mono tracking-widest text-[#D4AF37] uppercase font-bold">GENE BENDI SALON</span>
+            <span className="text-[10px] font-mono tracking-widest text-[#D4AF37] uppercase font-bold">HELYN HILLS DESIGN CLUB</span>
             <h2 className="text-2xl font-serif text-black uppercase tracking-wider">
-              {isRegister ? 'REQUEST COLLECTION VIP ACCESS' : 'CLIENT VIP LOG-IN'}
+              {isRegister ? 'Create Simple Account' : 'Member Log-In'}
             </h2>
             <p className="text-xs text-gray-500 font-light">
-              {isRegister ? 'Become an accredited collector' : 'Access your catalog, wishes, and real-time flight traces.'}
+              {isRegister ? 'Join our free members club to save design layouts and track current orders.' : 'Sign in easily using your email address and any simple password key.'}
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-1">
-              <label id="account-email" className="text-[10px] font-mono text-gray-550 tracking-wider block uppercase">REGISTERED EMAIL</label>
+              <label id="account-email" className="text-[10px] font-mono text-gray-550 tracking-wider block uppercase">Your Email</label>
               <input
                 type="email"
                 required
                 aria-labelledby="account-email"
                 value={emailIn}
                 onChange={(e) => setEmailIn(e.target.value)}
-                placeholder="vip-collector@house.com"
+                placeholder="me@myaddress.com"
                 className="w-full bg-white border border-gray-300 rounded px-3.5 py-3 text-xs text-black focus:outline-none focus:border-[#D4AF37]"
               />
             </div>
 
             <div className="space-y-1">
-              <label id="account-pass" className="text-[10px] font-mono text-gray-550 tracking-wider block uppercase">PASS KEY</label>
+              <label id="account-pass" className="text-[10px] font-mono text-gray-550 tracking-wider block uppercase">Password Key</label>
               <div className="relative">
                 <input
                   type={showPass ? 'text' : 'password'}
@@ -392,16 +392,17 @@ export function AccountView({
               type="submit"
               className="w-full bg-black text-white font-mono font-bold text-[10px] py-4 rounded tracking-widest hover:bg-[#D4AF37] transition-colors uppercase mt-2 cursor-pointer"
             >
-              {isRegister ? 'REQUEST COMPLIANCE NOMINATION' : 'SECURE ENTRY'}
+              {isRegister ? 'Register Account' : 'Log In'}
             </button>
           </form>
 
           <div className="text-center pt-2 border-t border-gray-200">
             <button
+              type="button"
               onClick={() => setIsRegister(!isRegister)}
               className="text-xs text-gray-500 hover:text-[#D4AF37] tracking-wider font-mono uppercase cursor-pointer"
             >
-              {isRegister ? 'Already have credentials? Log In' : 'No credentials? Nominate My Address'}
+              {isRegister ? 'Already registered? Log In Instead' : 'Brand new user? Sign Up Here'}
             </button>
           </div>
         </div>
@@ -416,22 +417,24 @@ export function AccountView({
             
             <div className="space-y-2 relative z-10">
               <span className="bg-black text-white text-[9.5px] font-mono tracking-widest font-bold px-3 py-1 rounded-full uppercase">
-                PLATINUM BLENDI CLIENT VIP
+                Design Club Member
               </span>
-              <h2 className="text-2xl font-serif text-black mt-1">Hello, Premium Collector</h2>
-              <p className="text-xs text-gray-500 font-mono">Verified Session: <span className="text-[#D4AF37]">{userEmail}</span></p>
+              <h2 className="text-2xl font-serif text-black mt-1">Welcome, Interior Lover</h2>
+              <p className="text-xs text-gray-500 font-mono">My Account of Record: <span className="text-[#D4AF37]">{userEmail}</span></p>
             </div>
 
             <div className="flex items-center space-x-4 shrink-0 relative z-10">
-              <div className="text-right font-mono">
-                <span className="text-[10px] text-gray-500 uppercase block">VIP REPUTATION POINTS</span>
-                <span className="text-lg text-[#D4AF37] font-bold">12,450 BLENDI</span>
+              <div className="text-right font-sans">
+                <span className="text-[10px] text-gray-500 uppercase block font-mono">Design Reward Points</span>
+                <span className="text-lg text-[#D4AF37] font-bold">1,245 Points</span>
+                <span className="text-[9px] text-gray-400 block font-light">Valid for bespoke custom finishes</span>
               </div>
               <button
+                type="button"
                 onClick={onLogoutState}
                 className="bg-white hover:bg-gray-50 border border-gray-300 hover:border-black text-black text-xs font-mono px-4 py-2 rounded tracking-widest uppercase transition-all cursor-pointer shadow-sm"
               >
-                DISCONNECT SESSION
+                Log Out
               </button>
             </div>
           </div>
@@ -442,7 +445,7 @@ export function AccountView({
             <div className="lg:col-span-6 space-y-6">
               <div className="border-b border-gray-200 pb-3 flex items-center justify-between">
                 <h3 className="text-sm font-semibold font-mono tracking-widest text-gray-700 uppercase">
-                  CLIENT VAULT WISHLIST ({wishlistProducts.length})
+                  SAVED DESIGNS & INSPIRATION ({wishlistProducts.length})
                 </h3>
               </div>
 
@@ -468,16 +471,18 @@ export function AccountView({
                       {/* Action blocks row */}
                       <div className="flex items-center space-x-2.5">
                         <button
+                          type="button"
                           onClick={() => onAddToCart(p, p.sizes[0], p.colors[0].name)}
                           className="bg-black text-white p-2 rounded hover:bg-[#D4AF37] text-xs transition-colors cursor-pointer"
-                          title="Add first size to bag"
+                          title="Add to shopping bag"
                         >
                           <ShoppingBag className="w-4 h-4" />
                         </button>
                         <button
+                          type="button"
                           onClick={(e) => onRemoveWishlist(p.id, e)}
                           className="bg-white border border-gray-300 hover:border-red-500 hover:text-red-500 p-2 rounded cursor-pointer text-gray-500 shadow-sm"
-                          title="Erase Vault Entry"
+                          title="Remove saved item"
                         >
                           <Trash className="w-4 h-4" />
                         </button>
@@ -486,8 +491,8 @@ export function AccountView({
                   ))}
                 </div>
               ) : (
-                <div className="text-center py-16 bg-gray-50 rounded-lg border border-gray-200 text-gray-500 text-xs">
-                  Your private footwear wishlist vault is empty.
+                <div className="text-center py-16 bg-gray-50 rounded-lg border border-gray-200 text-gray-500 text-xs font-normal leading-relaxed">
+                  Your design wishlist is empty. Save your favorite custom creations while browsing the collections.
                 </div>
               )}
             </div>
@@ -496,7 +501,7 @@ export function AccountView({
             <div className="lg:col-span-6 space-y-6">
               <div className="border-b border-gray-200 pb-3">
                 <h3 className="text-sm font-semibold font-mono tracking-widest text-gray-700 uppercase">
-                  ACTIVE FLIGHT COURIER TRACKERS ({orderHistory.length})
+                  SAVED ORDERS & TRACKING ({orderHistory.length})
                 </h3>
               </div>
 
@@ -526,10 +531,10 @@ export function AccountView({
 
                         {/* Summary details items */}
                         <div className="text-xs space-y-1">
-                          <p className="text-gray-450 uppercase tracking-widest font-mono text-[9px] mb-1">CONSTITUENT ITEMS</p>
+                          <p className="text-gray-450 uppercase tracking-widest font-mono text-[9px] mb-1">ITEMS PURCHASED</p>
                           {ord.items.map((item: any, idx: number) => (
                             <div key={idx} className="flex justify-between text-gray-700">
-                              <span>{item.product.name} (US {item.selectedSize}) x{item.quantity}</span>
+                              <span>{item.product.name} ({item.selectedSize}) x{item.quantity}</span>
                               <span className="font-mono text-gray-550">${item.product.price}</span>
                             </div>
                           ))}
@@ -541,10 +546,11 @@ export function AccountView({
                           </span>
 
                           <button
+                            type="button"
                             onClick={() => setShowTrackingDetailId(isTrackingVisible ? null : ord.id)}
                             className="text-[10px] font-mono text-[#D4AF37] hover:text-black uppercase tracking-widest font-bold hover:underline flex items-center space-x-1"
                           >
-                            <span>{isTrackingVisible ? 'HIDE TRACKER BAR' : 'EXPAND FLIGHT DEEP MONITOR'}</span>
+                            <span>{isTrackingVisible ? 'Close Tracker' : 'Track Delivery Details'}</span>
                           </button>
                         </div>
 
@@ -552,8 +558,8 @@ export function AccountView({
                         {isTrackingVisible && (
                           <div className="border border-gray-200 bg-white p-4 rounded-lg space-y-4 shadow-sm animate-fade-in">
                             <div className="flex justify-between text-[10px] font-mono text-gray-550 uppercase tracking-widest border-b border-gray-150 pb-1.5">
-                              <span>Transit Hub Trace</span>
-                              <span className="text-amber-600 font-bold">&bull; Courier Express Flight Transit</span>
+                              <span>Delivery Milestones</span>
+                              <span className="text-amber-600 font-bold">&bull; Handcrafted Custom Order Transit</span>
                             </div>
                             
                             {/* Line timeline graph progress */}
@@ -564,25 +570,25 @@ export function AccountView({
                               <div className="relative flex justify-between">
                                 <div className="text-center space-y-1">
                                   <div className="w-5 h-5 rounded-full bg-white border-2 border-[#D4AF37] mx-auto flex items-center justify-center text-[8.5px] font-mono font-bold text-[#D4AF37]">1</div>
-                                  <span className="text-[8px] font-mono text-gray-750 block uppercase tracking-wider">Kano Tannery</span>
+                                  <span className="text-[8px] font-mono text-gray-750 block uppercase tracking-wider">Sourcing Wood</span>
                                 </div>
                                 <div className="text-center space-y-1">
                                   <div className="w-5 h-5 rounded-full bg-white border-2 border-[#D4AF37] mx-auto flex items-center justify-center text-[8.5px] font-mono font-bold text-[#D4AF37]">2</div>
-                                  <span className="text-[8px] font-mono text-gray-750 block uppercase tracking-wider">Lagos Air Cargo</span>
+                                  <span className="text-[8px] font-mono text-gray-750 block uppercase tracking-wider">Expert Craft</span>
                                 </div>
                                 <div className="text-center space-y-1">
                                   <div className="w-5 h-5 rounded-full bg-[#D4AF37] text-white mx-auto flex items-center justify-center text-[8.5px] font-mono font-bold">3</div>
-                                  <span className="text-[8px] font-mono text-[#D4AF37] font-bold block uppercase tracking-wider">Flight Aviation</span>
+                                  <span className="text-[8px] font-mono text-[#D4AF37] font-bold block uppercase tracking-wider">Quality Polishing</span>
                                 </div>
                                 <div className="text-center space-y-1">
                                   <div className="w-5 h-5 rounded-full bg-white border border-gray-200 mx-auto flex items-center justify-center text-[8.5px] font-mono font-bold text-gray-400">4</div>
-                                  <span className="text-[8px] font-mono text-gray-400 block uppercase tracking-wider">Curator Address</span>
+                                  <span className="text-[8px] font-mono text-gray-400 block uppercase tracking-wider">Your Home</span>
                                 </div>
                               </div>
                             </div>
                             
                             <p className="text-[10px] text-gray-500 leading-relaxed font-light italic">
-                              Package departed Murtala Muhammed International Airport Cargo terminal in Lagos, heading across shipping lanes towards your location hub. Expected delivery duration remaining: 48 Hours. Includes carbon footprint offsets.
+                              Your furniture item has been handcrafted, safety polished, and is currently in delivery transit straight to your door. Expected delivery duration: 48 Hours with complimentary room installation.
                             </p>
                           </div>
                         )}
@@ -642,7 +648,7 @@ export function CheckoutView({
 
   // Math totals calculation
   const subtotal = cart.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
-  const discountRate = couponSuccess ? (couponCode.toUpperCase() === 'BLENDI20' ? 0.2 : 0.15) : 0;
+  const discountRate = couponSuccess ? (couponCode.toUpperCase() === 'HELYN20' ? 0.2 : 0.15) : 0;
   const discountTotal = subtotal * discountRate;
   const estimatedVat = (subtotal - discountTotal) * 0.1; // 10%
   const grandTotal = subtotal - discountTotal + estimatedVat;
@@ -907,7 +913,7 @@ export function CheckoutView({
                 />
                 <div className="flex-1 min-w-0">
                   <h4 className="text-black font-bold truncate">{item.product.name}</h4>
-                  <p className="text-[10px] text-gray-500 font-mono mt-0.5">SIZE: US {item.selectedSize} &bull; TYPE: {item.selectedColor}</p>
+                  <p className="text-[10px] text-gray-500 font-mono mt-0.5">SCALE: {item.selectedSize} &bull; TYPE: {item.selectedColor}</p>
                   <p className="text-[11px] text-gray-650 font-mono mt-0.5">Quantity: {item.quantity}</p>
                 </div>
                 <span className="font-mono text-[#D4AF37] font-semibold text-right">${item.product.price}</span>
@@ -934,7 +940,7 @@ export function CheckoutView({
 
           {couponSuccess && (
             <div className="bg-amber-50 border border-amber-200 p-2 text-center rounded text-[10.5px] font-mono text-[#D4AF37] uppercase tracking-widest">
-              DEDUCTION ACTIVE: {couponCode.toUpperCase() === 'BLENDI20' ? '20%' : '15%'} REDUCTION APPLIED
+              DEDUCTION ACTIVE: {couponCode.toUpperCase() === 'HELYN20' ? '20%' : '15%'} REDUCTION APPLIED
             </div>
           )}
 

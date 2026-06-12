@@ -6,7 +6,7 @@ interface ProductCardProps {
   key?: React.Key;
   product: Product;
   onViewDetails: (id: string) => void;
-  onAddToCart: (product: Product, size: number, color: string) => void;
+  onAddToCart: (product: Product, size: string, color: string) => void;
   isWishlisted: boolean;
   onToggleWishlist: (id: string, e: React.MouseEvent) => void;
 }
@@ -22,7 +22,7 @@ export default function ProductCard({
   const [showQuickSize, setShowQuickSize] = useState(false);
 
   // Quick purchase picks first color and default size
-  const handleQuickAdd = (size: number, e: React.MouseEvent) => {
+  const handleQuickAdd = (size: string, e: React.MouseEvent) => {
     e.stopPropagation();
     onAddToCart(product, size, product.colors[0].name);
     setShowQuickSize(false);
@@ -110,14 +110,15 @@ export default function ProductCard({
           ) : (
             <div className="w-full bg-white/95 backdrop-blur-md p-2.5 rounded border border-gray-200 animate-fade-in text-center shadow-lg">
               <p className="text-[9px] font-mono tracking-widest text-gray-500 uppercase mb-2">
-                Select Your Size
+                Select Scale
               </p>
-              <div className="flex flex-wrap justify-center gap-1.5 max-h-20 overflow-y-auto">
+              <div className="flex flex-wrap justify-center gap-1 max-h-24 overflow-y-auto">
                 {product.sizes.map((size) => (
                   <button
                     key={size}
+                    type="button"
                     onClick={(e) => handleQuickAdd(size, e)}
-                    className="w-8 h-8 rounded border border-gray-200 hover:border-black text-[10px] font-mono text-gray-700 hover:text-black transition-colors cursor-pointer"
+                    className="w-auto h-auto px-2 py-1 border border-gray-200 hover:border-black text-[9px] font-mono text-gray-700 hover:text-black transition-colors cursor-pointer rounded"
                   >
                     {size}
                   </button>
